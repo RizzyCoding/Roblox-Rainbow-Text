@@ -47,4 +47,3 @@ text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
 k = k + add
 wait()
 end
-end
