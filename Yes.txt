@@ -1,3 +1,4 @@
+TextLabel = _G.TextLabel
 local r = {
 	Color3.fromRGB(254, 0, 0);
 	Color3.fromRGB(255, 127, 0);
