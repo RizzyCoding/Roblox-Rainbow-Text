@@ -1,53 +1,19 @@
-local add = getgenv().add
+local r = {
+	Color3.fromRGB(254, 0, 0);
+	Color3.fromRGB(255, 127, 0);
+	Color3.fromRGB(255, 221, 1);
+	Color3.fromRGB(0, 200, 0);
+	Color3.fromRGB(0, 160, 199);
+	Color3.fromRGB(0, 55, 230);
+	Color3.fromRGB(129, 16, 210)}
+local info = TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+TextLabel.TextColor3 = r[1]
+i = 1
 while true do
-wait(1)
-local k = 1
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(k/255,0/255,0/255)
-k = k + add
-wait(0.5)
-end
-while true do
-k = 1
-end
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(255/255,k/255,0/255)
-k = k + add
-wait(0.5)
-end
-k = 1
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
-k = k + add
-wait(0.5)
-end
-k = 1
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(0/255,255/255,k/255)
-k = k + add
-wait(0.5)
-end
-k = 1
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
-k = k + add
-wait(0.5)
-end
-k = 1
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(k/255,0/255,255/255)
-k = k + add
-wait(0.5)
-end
-k = 1
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
-k = k + add
-wait(0.5)
-end
-while k <= 255 do
-TextLabel.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
-k = k + add
-wait(0.5)
-end
+	local tween = game:GetService("TweenService"):Create(TextLabel, info, {
+		TextColor3 = r[i]})
+	tween:Play()
+	repeat wait() until tween.Completed
+	wait(0.1)
+	if i == #r then i = 1 else i = i + 1 end
 end
