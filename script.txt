@@ -1,3 +1,4 @@
+local add = getgenv().add
 wait(1)
 local k = 1
 while k <= 255 do
